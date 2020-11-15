@@ -9,9 +9,11 @@ public class CubeMovement : MonoBehaviour
     private float Angle = 0F;
     public float speed; //скорость перемещения
 
+    private Rigidbody rigidbody;
     void Start()
     {
-        
+        rigidbody = GetComponent<Rigidbody>();
+        rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 
     void FixedUpdate()
